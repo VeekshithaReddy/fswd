@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result</title>
+    <script>
+        function calculateResult() {
+            var m1 = Number(document.getElementById("m1").value);
+            var m2 = Number(document.getElementById("m2").value);
+            var m3 = Number(document.getElementById("m3").value);
+            var m4 = Number(document.getElementById("m4").value);
+            var m5 = Number(document.getElementById("m5").value);
+            var marks = [m1, m2, m3, m4, m5];
+            for (var i = 0; i < marks.length; i++) {
+                if (document.getElementById("m" + (i + 1)).value == "" ||
+                    marks[i] < 0 || marks[i] > 100) {
+
+                    document.getElementById("error").innerHTML =
+                        "Error: Enter valid marks between 0 and 100.";
+
+                    document.getElementById("result").innerHTML = "";
+                    return;
+                }
+            }
+            var total = m1 + m2 + m3 + m4 + m5;
+            var percentage = total / 5;
+            var grade;
+            if (percentage >= 90)
+                grade = "A+";
+            else if (percentage >= 80)
+                grade = "A";
+            else if (percentage >= 70)
+                grade = "B";
+            else if (percentage >= 60)
+                grade = "C";
+            else if (percentage >= 50)
+                grade = "D";
+            else
+                grade = "F";
+            var result;
+            if (marks.some(function(mark) {
+                return mark < 35;
+            })) {
+                result = "Fail";
+            } else {
+                result = "Pass";
+            }
+            document.getElementById("error").innerHTML = "";
+            document.getElementById("result").innerHTML =
+                "<h3>Student Result</h3>" +
+                "Total Marks: " + total + "<br>" +
+                "Percentage: " + percentage.toFixed(2) + "%<br>" +
+                "Grade: " + grade + "<br>" +
+                "Result: " + result;
+        }
+    </script>
+</head>
+<body>
+<h2>Student Marks</h2>
+<form>
+    Subject 1:
+    <input type="number" id="m1"><br><br>
+
+    Subject 2:
+    <input type="number" id="m2"><br><br>
+
+    Subject 3:
+    <input type="number" id="m3"><br><br>
+
+    Subject 4:
+    <input type="number" id="m4"><br><br>
+
+    Subject 5:
+    <input type="number" id="m5"><br><br>
+
+    <input type="button" value="Calculate Result"
+           onclick="calculateResult()">
+</form>
+<p id="error" style="color:red;"></p>
+<div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table of Contents</title>
+</head>
+<body>
+    <h1>Table of Contents</h1>
+    <ul>
+        <li><a href="#html">HTML</a></li>
+        <li><a href="#css">CSS</a></li>
+        <li><a href="#javascript">JavaScript</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+    </ul>
+    <hr>
+    <h2 id="html">HTML</h2>
+    <p>
+        HTML stands for HyperText Markup Language.
+        It is used to create the structure of webpages.
+    </p>
+    <a href="#top">Back to Top</a>
+    <h2 id="css">CSS</h2>
+    <p>
+        CSS stands for Cascading Style Sheets.
+        It is used to style and design webpages.
+    </p>
+    <a href="#top">Back to Top</a>
+    <h2 id="javascript">JavaScript</h2>
+    <p>
+        JavaScript is a programming language used
+        to make webpages interactive.
+    </p>
+    <a href="#top">Back to Top</a>
+    <h2 id="conclusion">Conclusion</h2>
+    <p>
+        HTML, CSS and JavaScript are commonly used
+        together to develop webpages.
+    </p>
+    <a href="#top">Back to Top</a>
+</body>
+</html>
